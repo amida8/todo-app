@@ -42,7 +42,7 @@ todo-app/
 ## 👤 作者 / Author
 
 - Name: リナ（Lina）  
-- Email: your.email@example.com
+- Email: nina1769796516@gmail.com
 
 ---
 
