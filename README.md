@@ -32,10 +32,11 @@ HTML・CSS・JavaScriptで構成されており、基本的なDOM操作も含ま
 
 ## 📁 ファイル構成 / File Structure
 todo-app/
-├── index.html         # メインHTMLファイル
-├── style.css          # スタイル定義
-├── script.js          # アプリのロジック
-└── README.md          # プロジェクト説明
+├── index.html    # メインHTMLファイル
+├── style.css     # スタイル定義
+├── script.js     # アプリのロジック
+└── README.md     # プロジェクト説明
+
 ---
 
 ## 👤 作者 / Author
