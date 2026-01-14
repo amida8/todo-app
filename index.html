@@ -12,10 +12,18 @@
     <h1>ToDoリスト</h1>
 
     <div class="input-area">
-      <input type="text" placeholder="やることを入力" />
-      <button>追加</button>
+      <!-- 👇 给输入框身份证 -->
+      <input id="todo-input" type="text" placeholder="やることを入力" />
+      
+      <!-- 👇 给按钮身份证（推荐） -->
+      <button id="add-btn" type="button">追加</button>
     </div>
+
+    <!-- 👇 ToDo 显示区域（之前完全没有） -->
+    <ul id="todo-list"></ul>
   </div>
 
+  <!-- 👇 一定要加载 JS -->
+  <script src="script.js"></script>
 </body>
 </html>
