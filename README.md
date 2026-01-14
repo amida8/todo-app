@@ -42,12 +42,10 @@ todo-app/
 
 ---
 
-⸻
-
 ## 👤 作者 / Author
 
-- Name: リ ナ（LI NA）  
-- Email: nina1769796516@gmail.com
+- Name: リナ（LI NA）  
+- Email: nina1769796516@gmail.com  
 
 ---
 
