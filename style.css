@@ -10,23 +10,23 @@ body {
 }
 
 /* 白色卡片（整体放大就在这里） */
-.todo-container {
+todo-container {
   background: white;
-  padding: 3em;
+  padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  width: 420px;
-  font-size: 18px;   /* ⭐ 核心：里面所有内容一起变大 */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  width: 90%;
+  max-width: 380px;
 }
 
 /* 标题 */
-.todo-container h1 {
+todo-container h1 {
   text-align: center;
   margin-bottom: 1.5em;
 }
 
 /* 输入区 */
-.input-area {
+input-area {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.5em;
@@ -71,12 +71,12 @@ li {
 }
 
 /* 删除按钮 */
-.delete {
+delete {
   background: #dc3545;
   padding: 0.3em 0.6em;
   font-size: 0.9em;
 }
 
-.delete:hover {
+delete:hover {
   background: #bb2d3b;
 }
