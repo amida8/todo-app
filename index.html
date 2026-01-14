@@ -2,24 +2,20 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ToDo App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="page">
-    <section class="card">
-      <h1 class="title">ToDoリスト</h1>
 
-      <form class="input-area" id="todoForm">
-        <input id="todoInput" type="text" placeholder="やることを入力" />
-        <button type="submit">追加</button>
-      </form>
+  <div class="todo-container">
+    <h1>ToDoリスト</h1>
 
-      <ul id="todoList" class="list"></ul>
-    </section>
-  </main>
+    <div class="input-area">
+      <input type="text" placeholder="やることを入力" />
+      <button>追加</button>
+    </div>
+  </div>
 
-  <script src="script.js"></script>
 </body>
 </html>
