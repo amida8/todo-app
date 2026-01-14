@@ -1,20 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>ToDo App</title>
+  <title>ToDoリスト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="todo-container">
-  <h1>ToDoリスト</h1>
 
-  <div class="input-area">
-    <input type="text" placeholder="やることを入力" />
-    <button>追加</button>
+  <div class="todo-container">
+    <h1>ToDoリスト</h1>
+
+    <div class="input-area">
+      <input type="text" id="todo-input" placeholder="やることを入力">
+      <button onclick="addTodo()">追加</button>
+    </div>
+
+    <ul id="todo-list"></ul>
   </div>
 
-</div>
-  <script src="script.js"></script>
+  <script>
+    function addTodo() {
+      const input = document.getElementById("todo-input");
+      const text = input.value.trim();
+      if (text === "") return;
+
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <span>${text}</span>
+        <button class="delete" onclick="this.parentElement.remove()">×</button>
+      `;
+
+      document.getElementById("todo-list").appendChild(li);
+      input.value = "";
+    }
+  </script>
+
 </body>
 </html>
