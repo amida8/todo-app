@@ -1,117 +1,106 @@
-* { box-sizing: border-box; }
-
-:root{
-  --bg: #f2f2f2;
-  --card: #fff;
-  --text: #111;
-  --muted: #666;
-  --primary: #1a73e8;
-  --radius: 18px;
-  --shadow: 0 14px 40px rgba(0,0,0,.12);
+/* ===== 全局 ===== */
+* {
+  box-sizing: border-box;
 }
 
-body{
+body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f2f2f2;
+
+  /* 居中核心 */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* 关键：居中 + 不同屏幕都舒服 */
-.page{
-  min-height: 100svh;              /* 比 100vh 更适合手机浏览器 */
-  display: grid;
-  place-items: center;
-  padding: clamp(16px, 3vw, 40px);
-}
+/* ===== 白色卡片 ===== */
+.todo-container {
+  background: #fff;
+  width: 90%;
+  max-width: 420px;   /* 关键：防止电脑端过大 */
+  padding: 32px 28px;
+  border-radius: 18px;
 
-/* 关键：宽度自适应 + 不会无限变大 */
-.card{
-  width: min(92vw, 720px);         /* 手机占 92%，电脑最多 720px */
-  background: var(--card);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: clamp(18px, 3.2vw, 40px);
-}
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
 
-/* 标题自适应大小 */
-.title{
-  margin: 0 0 18px;
   text-align: center;
-  font-weight: 800;
-  font-size: clamp(28px, 4vw, 44px);
-  letter-spacing: .02em;
 }
 
-/* 输入区域：能挤就一排，挤不下就换行 */
-.input-area{
+/* ===== 标题 ===== */
+.todo-container h1 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ===== 输入区域 ===== */
+.input-area {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;                 /* 关键：小屏自动换行 */
-  justify-content: center;
-  margin-bottom: 14px;
 }
 
-.input-area input{
-  flex: 1 1 320px;                 /* 关键：会伸缩，最小 320 */
-  min-width: 220px;
-  padding: 16px 14px;
-  font-size: clamp(16px, 2.2vw, 20px);
-  border: 1px solid #d7d7d7;
-  border-radius: 12px;
+/* 输入框 */
+.input-area input {
+  flex: 1;
+  height: 44px;
+  padding: 0 14px;
+
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+
   outline: none;
 }
 
-.input-area input:focus{
-  border-color: rgba(26,115,232,.6);
-  box-shadow: 0 0 0 4px rgba(26,115,232,.15);
+.input-area input:focus {
+  border-color: #3b82f6;
 }
 
-.input-area button{
-  flex: 0 0 auto;
-  padding: 16px 18px;
-  font-size: clamp(16px, 2.2vw, 20px);
+/* ===== 追加按钮（你要的那种蓝） ===== */
+.input-area button {
+  height: 44px;
+  padding: 0 18px;
+
+  font-size: 15px;
   font-weight: 700;
-  border: none;
-  border-radius: 12px;
-  background: var(--primary);
-  color: white;
-  cursor: pointer;
-}
+  color: #fff;
 
-.input-area button:active{
-  transform: translateY(1px);
-}
-
-/* 列表（你后面加功能也能直接用） */
-.list{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.list li{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  border: 1px solid #eee;
-  border-radius: 12px;
-}
-
-.list li span{
-  font-size: clamp(16px, 2.2vw, 18px);
-  color: var(--text);
-}
-
-.list li button{
-  background: #ff4d4f;
-  color: white;
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
   border: none;
   border-radius: 10px;
-  padding: 10px 12px;
+
+  box-shadow:
+    0 4px 10px rgba(37,99,235,.35),
+    inset 0 1px 0 rgba(255,255,255,.3);
+
   cursor: pointer;
+  transition: all .15s ease;
+}
+
+/* hover */
+.input-area button:hover {
+  background: linear-gradient(180deg, #4f8df7 0%, #2f6af0 100%);
+}
+
+/* active */
+.input-area button:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 2px 6px rgba(37,99,235,.35),
+    inset 0 1px 0 rgba(255,255,255,.25);
+}
+
+/* ===== 小屏再优化 ===== */
+@media (max-width: 360px) {
+  .todo-container {
+    padding: 26px 20px;
+  }
+
+  .todo-container h1 {
+    font-size: 24px;
+  }
 }
