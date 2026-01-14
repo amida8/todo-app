@@ -1,40 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>ToDoリスト</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToDo App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <main class="page">
+    <section class="card">
+      <h1 class="title">ToDoリスト</h1>
 
-  <div class="todo-container">
-    <h1>ToDoリスト</h1>
+      <form class="input-area" id="todoForm">
+        <input id="todoInput" type="text" placeholder="やることを入力" />
+        <button type="submit">追加</button>
+      </form>
 
-    <div class="input-area">
-      <input type="text" id="todo-input" placeholder="やることを入力">
-      <button onclick="addTodo()">追加</button>
-    </div>
+      <ul id="todoList" class="list"></ul>
+    </section>
+  </main>
 
-    <ul id="todo-list"></ul>
-  </div>
-
-  <script>
-    function addTodo() {
-      const input = document.getElementById("todo-input");
-      const text = input.value.trim();
-      if (text === "") return;
-
-      const li = document.createElement("li");
-      li.innerHTML = `
-        <span>${text}</span>
-        <button class="delete" onclick="this.parentElement.remove()">×</button>
-      `;
-
-      document.getElementById("todo-list").appendChild(li);
-      input.value = "";
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
