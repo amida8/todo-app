@@ -1,82 +1,117 @@
-/* 页面整体居中 */
-body {
+* { box-sizing: border-box; }
+
+:root{
+  --bg: #f2f2f2;
+  --card: #fff;
+  --text: #111;
+  --muted: #666;
+  --primary: #1a73e8;
+  --radius: 18px;
+  --shadow: 0 14px 40px rgba(0,0,0,.12);
+}
+
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f2f2f2;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* 白色卡片（整体放大就在这里） */
-todo-container {
-  background: white;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  width: 90%;
-  max-width: 380px;
+/* 关键：居中 + 不同屏幕都舒服 */
+.page{
+  min-height: 100svh;              /* 比 100vh 更适合手机浏览器 */
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 3vw, 40px);
 }
 
-/* 标题 */
-todo-container h1 {
+/* 关键：宽度自适应 + 不会无限变大 */
+.card{
+  width: min(92vw, 720px);         /* 手机占 92%，电脑最多 720px */
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(18px, 3.2vw, 40px);
+}
+
+/* 标题自适应大小 */
+.title{
+  margin: 0 0 18px;
   text-align: center;
-  margin-bottom: 1.5em;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: .02em;
 }
 
-/* 输入区 */
-input-area {
+/* 输入区域：能挤就一排，挤不下就换行 */
+.input-area{
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5em;
+  gap: 12px;
+  flex-wrap: wrap;                 /* 关键：小屏自动换行 */
+  justify-content: center;
+  margin-bottom: 14px;
 }
 
-input {
-  width: 70%;
-  padding: 0.7em;
-  font-size: 1em;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.input-area input{
+  flex: 1 1 320px;                 /* 关键：会伸缩，最小 320 */
+  min-width: 220px;
+  padding: 16px 14px;
+  font-size: clamp(16px, 2.2vw, 20px);
+  border: 1px solid #d7d7d7;
+  border-radius: 12px;
+  outline: none;
 }
 
-/* 按钮 */
-button {
-  padding: 0.7em 1em;
-  font-size: 1em;
+.input-area input:focus{
+  border-color: rgba(26,115,232,.6);
+  box-shadow: 0 0 0 4px rgba(26,115,232,.15);
+}
+
+.input-area button{
+  flex: 0 0 auto;
+  padding: 16px 18px;
+  font-size: clamp(16px, 2.2vw, 20px);
+  font-weight: 700;
   border: none;
-  border-radius: 8px;
-  background-color: #0d6efd;
+  border-radius: 12px;
+  background: var(--primary);
   color: white;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0b5ed7;
+.input-area button:active{
+  transform: translateY(1px);
 }
 
-/* 列表 */
-ul {
+/* 列表（你后面加功能也能直接用） */
+.list{
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  gap: 10px;
 }
 
-li {
+.list li{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6em 0;
-  border-bottom: 1px solid #eee;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid #eee;
+  border-radius: 12px;
 }
 
-/* 删除按钮 */
-delete {
-  background: #dc3545;
-  padding: 0.3em 0.6em;
-  font-size: 0.9em;
+.list li span{
+  font-size: clamp(16px, 2.2vw, 18px);
+  color: var(--text);
 }
 
-delete:hover {
-  background: #bb2d3b;
+.list li button{
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
 }
