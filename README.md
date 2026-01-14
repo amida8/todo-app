@@ -26,8 +26,7 @@ HTML・CSS・JavaScriptで構成されており、基本的なDOM操作も含ま
 
 ## 🖥 プレビュー / Demo
 
-🔗 [GitHub Pagesで公開する場合はここにリンクを追加]  
-👉（你上传完成 GitHub Pages 后我可以帮你补上）
+🔗 https://amida8.github.io/todo-app/
 
 ---
 
@@ -41,7 +40,7 @@ todo-app/
 
 ## 👤 作者 / Author
 
-- Name: リナ（Lina）  
+- Name: リ ナ（LI NA）  
 - Email: nina1769796516@gmail.com
 
 ---
