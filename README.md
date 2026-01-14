@@ -39,6 +39,7 @@ todo-app/
 ├── style.css     # スタイル定義
 ├── script.js     # アプリのロジック
 └── README.md     # プロジェクト説明
+```
 
 ---
 
